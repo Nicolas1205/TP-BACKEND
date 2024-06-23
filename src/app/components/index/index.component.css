@@ -1,0 +1,34 @@
+html{
+    height: 100%vw;
+    width: 100%vw;
+}
+body{
+    background-color: transparent;
+    height: 100%;
+    display: block;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    color: white;
+    font-style: oblique;
+    text-align: center;
+    font-size: 4em;
+}
+.navbar{
+    --bs-navbar-padding-x: 0;
+    --bs-navbar-padding-y: 0;
+    --bs-navbar-brand-font-size: 2rem;
+}
+.nav-link {
+    padding: 0;
+}
+
+.container-fluid{
+    height: 20%;
+}

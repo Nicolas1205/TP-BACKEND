@@ -1,0 +1,47 @@
+<div class="container-fluid bg-info-subtle p-2">
+  <h3 class="col-12 text-center text-dark ">LISTA DE TICKETS</h3>
+</div>
+
+
+<div class="container">
+  <label for="nombreCategoria" class="form-label text-light">Nombre Categoria</label>
+  <input type="text" class="form-control" id="nombreCategoria" name="nombreCategoria" [(ngModel)]="nombreCategoria" aria-describedby="nombreHelp">
+<div class="input-group mb-3 p-5" id="seleccion">
+  <span class="input-group-text">FILTROS</span>
+  <button class="btn btn-info" (click)="obtenerTickets()">Listar Todos los Tickets</button>
+  <button class="btn btn-warning" (click)="obtenerTicketCategoria('l')">Listar los tickets de Locales</button>
+  <button class="btn btn-success" (click)="obtenerTicketCategoria('e')">Listar los tickets de Extranjeros</button>
+  <button class="btn btn-primary" (click)="agregar()">AGREGAR TICKET</button>
+  <button class="btn btn-success" (click)="obtenerTicketsNombreCategoria(nombreCategoria)">Buscar por Nombre Categoria</button>
+</div>
+</div>
+
+
+
+<div class="table-responsive d-flex justify-content-center">
+  <table class="table table-striped table table-bordered border-dark text-center ">
+    <thead class="table-warning">
+      <tr>
+        <th style="width: 15%"> id </th>
+        <th style="width: 15%"> precio del ticket </th>
+        <th style="width: 15%"> fecha de compra</th>
+        <th style="width: 15%"> Tipo del ticket</th>
+        <th style="width: 15%"> espectador</th>
+        <th style="width: 15%"> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let datos of tickets">
+        <td>{{datos._id}}</td>
+        <td>$ {{datos.precioTicket}}</td>
+        <td>{{datos.fechaCompra}}</td>
+        <td>{{datos.categoriaEspectador}}</td>
+        <!-- <td>{{datos.espectador.nombre}},{{datos.espectador.apellido}}</td> -->
+        <td>
+          <button class="btn btn-success" (click)="modificar(datos._id)">MOD</button>
+          <button class="btn btn-danger" (click)="eliminarTicket(datos._id)">BORRAR</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
